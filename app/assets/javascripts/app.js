@@ -1,6 +1,6 @@
-var nVoice = angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates']);
+angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates'])
 
-nVoice.config(function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('welcome', {
@@ -16,9 +16,9 @@ nVoice.config(function($stateProvider, $urlRouterProvider) {
     })
 
   $urlRouterProvider.otherwise('welcome');
-});
+}])
 
-nVoice.controller('MainCtrl', function($scope, $location, $state, $modal) {
+.controller('MainCtrl', ['$scope', '$location', '$state', '$modal', function($scope, $location, $state, $modal) {
 
   $scope.date = Date.now();
   $scope.id = Math.floor((Math.random() * 1000) + 1);
@@ -54,9 +54,9 @@ nVoice.controller('MainCtrl', function($scope, $location, $state, $modal) {
       $scope.reset();
     });
   };
-});
+}])
 
-nVoice.controller('ModalCtrl', function($scope, $modalInstance) {
+.controller('ModalCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
 
   $scope.cancel = function () {
     $modalInstance.dismiss('NO');
@@ -65,4 +65,4 @@ nVoice.controller('ModalCtrl', function($scope, $modalInstance) {
   $scope.ok = function() {
     $modalInstance.close();
   };
-});
+}]);
