@@ -1,0 +1,99 @@
+<div class='box col-sm-12'>
+
+  <div class='invoice-header'>PREVIEW:</div>
+
+  <table class='table small-text'>
+    <tr>
+      <td colspan='2'>
+        {{ cName || 'Robert Pulson' }}
+        <br>
+        {{ cAddress || '123 Fake Street' }}
+        <br>
+        {{ cPostcode || 'FA73 5TE' }}
+        <br>
+        {{ cEmail || 'robertpulson@dreamer.com' }}
+      </td>
+      <td  class='right-align' colspan='2'>
+        <h5>{{ bName || 'Los Pollos Hermanos' }}</h5>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan='4'></td>
+    </tr>
+
+    <tr>
+      <td>
+      </td>
+      <th class='right-align'>
+        Date:
+        <br>
+        Invoice No:
+      </th>
+      <td colspan='2'>
+        {{ date | date:'fullDate' }}
+        <br>
+        #{{ id }}
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan='4'></td>
+    </tr>
+
+    <tr style='border-top: 2px solid #ddd; border-bottom: 2px solid #ddd;'>
+      <th>Description</th>
+      <th>Cost</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>{{ desc || 'A lot of Hard Work' }}</td>
+      <td>{{ (price | currency:'£':2) || '£1,000,000.00' }}</td>
+      <td>1</td>
+      <td>{{ (price | currency:'£':2) || '£1,000,000.00' }}</td>
+    </tr>
+    <tr>
+      <td colspan='4'></td>
+    </tr>
+    <tr>
+      <td colspan='4'></td>
+    </tr>
+    <tr>
+      <td colspan='4'></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <th class='right-align' style='border-top: 2px solid #ddd; border-left: 2px solid #ddd;'>Subtotal</th>
+      <td style='border-top: 2px solid #ddd; border-right: 2px solid #ddd;'>{{ (price | currency:'£':2) || '£1,000,000.00' }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <th class='right-align' style='border-left: 2px solid #ddd;'>Paid</th>
+      <td style='border-right: 2px solid #ddd;'>£0.00</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <th class='right-align' style='border-bottom: 2px solid #ddd; border-left: 2px solid #ddd;'>Total</th>
+      <td style='border-bottom: 2px solid #ddd; border-right: 2px solid #ddd;'>{{ (price | currency:'£':2) || '£1,000,000.00' }}</td>
+    </tr>
+    <tr>
+      <th style='border-bottom: 2px solid #ddd;' colspan='4'>TERMS</th>
+    </tr>
+
+    <tr>
+      <td colspan='4'>
+        All Invoices to be paid within 30 days.
+        <br>
+        Charge of 1.5% will be made on unpaid balances after 30 days.
+      </td>
+    </tr>    
+
+  </table>
+
+  <button ng-click='showWelcome()' class='btn btn-default'>Welcome</button>
+
+</div>

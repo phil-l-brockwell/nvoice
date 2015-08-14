@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app='nVoice'>
+  <head>
+    <title>NvoiceRails</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body ng-controller='MainCtrl'>
+
+    <nav class='navbar navbar-inverse navbar-fixed-top'>
+      <div class='container'>
+        <a href='#'>
+          <h1>nVoice <small>Giving Small Business a Voice</small></h1>
+        </a>
+      </div>
+    </nav>
+
+    <div class='container'>
+
+      <div class='container col-xs-12 col-sm-6 col-md-6'>
+
+        <form ng-submit='' name='nVoiceForm' class="col-sm-12 form-horizontal" novalidate>
+
+          <div class="form-group">
+            <input ng-model='cName' ng-click='showPreview()' class="form-control" placeholder="Customer Name" required>
+          </div>
+
+          <div ng-show='cName' class="form-group slide-down">
+            <input ng-click='showPreview()' type='email' ng-model='cEmail' class="form-control" placeholder="Customers Email Address" required>
+          </div>
+
+          <div ng-show='cName && cEmail' class="form-group slide-down">
+            <input ng-click='showPreview()' ng-model='cAddress' class="form-control" placeholder="First Line of Customer Address" required>
+          </div>
+
+          <div ng-show='cName && cEmail && cAddress' class="form-group slide-down">
+            <input ng-click='showPreview()' ng-model='cPostcode' class="form-control" placeholder="Customers Postcode" required>
+          </div>
+  
+          <div ng-show='cName && cEmail && cAddress && cPostcode' class="form-group slide-down">
+            <input ng-click='showPreview()' ng-model='desc' class="form-control" placeholder="Description of Work" required>
+          </div>
+
+          <div ng-show='cName && cEmail && cAddress && cPostcode && desc' class="form-group slide-down">
+            <input ng-click='showPreview()' type='number' ng-model='price' class="form-control" placeholder="Price" required>
+          </div>
+
+          <div ng-show='cName && cEmail && cAddress && cPostcode && desc && price' class="form-group slide-down">
+            <input ng-click='showPreview()' ng-model='bName' class="form-control" placeholder="Your Name/Business Name" required>
+          </div>
+
+          <div ng-show='nVoiceForm.$valid' class="form-group slide-down">
+            <button ng-click='sendInvoice()' class="btn btn-default">Send</button>
+            <button ng-click='reset()' class='btn btn-default'>Clear</button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class='container col-xs-12 col-sm-6 col-md-6'>
+        <div ui-view></div>
+      </div>
+
+    </div>
+
+    <nav class='navbar navbar-inverse navbar-fixed-bottom'>
+      <div class='container'>
+        All Work by <a href='http://www.philbrockwell.com/'>Phil Brockwell</a>.
+      </div>
+    </nav>
+
+  </body>
+
+
+</html>

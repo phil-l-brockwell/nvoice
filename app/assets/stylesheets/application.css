@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require animate.css/animate
+ *= require bootstrap/dist/css/bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+body
+{
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background: url(http://tifaq.com/wp-content/uploads/2014/07/Renovating-the-Home-Office-to-Prevent-Repetitive-Strain-Injuries.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.message-box
+{
+  text-align: center;
+  padding: 20px;
+}
+
+.message-box h3
+{
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave
+{
+  transition:1s all ease; 
+  -moz-transition:1s all ease; 
+  -webkit-transition:1s all ease; 
+}
+
+[ui-view].ng-enter-active
+{
+  -webkit-animation:slideInRight 1s both ease;
+  -moz-animation:slideInRight 1s both ease;
+  animation:slideInRight 1s both ease;
+}
+
+[ui-view].ng-leave-active
+{
+  -webkit-animation:slideOutRight 1s both ease;
+  -moz-animation:slideOutRight 1s both ease;
+  animation:slideOutRight 1s both ease;
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+}
+
+[ui-view].ng-leave {
+  opacity: 0;
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+}
+
+.table-heading
+{
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+.invoice-header
+{
+  background-color: black;
+  color: rgb(119, 119, 119);
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.small-text
+{
+  font-size: 0.7em;
+}
+
+.right-align
+{
+  text-align: right;
+}
+
+.box
+{
+  font-size: 0.85em;
+  text-align: justify;
+  padding: 20px;
+  height: 540px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+}
+
+.btn-default
+{
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3); 
+}
+
+.form-control
+{
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+}
+
+.slide-down 
+{
+  position: relative;
+  -webkit-transition: ease 1s;
+  transition: ease 1s;
+  top: 0;
+}
+
+.slide-down.ng-hide 
+{
+  top: -50px;
+}
+
+.slide-down.ng-hide-add, .slide-down.ng-hide-remove 
+{
+  display: block !important;
+}
+
+.ng-valid.ng-dirty
+{
+  border-color: green;
+  color: green;
+}
+
+.ng-invalid.ng-dirty
+{
+  border-color: red;
+  color: red;
+}
