@@ -44,7 +44,7 @@ angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates']
   $scope.sendInvoice = function() {
     var invoice = { cName: $scope.cName, cEmail: $scope.cEmail, cAddress: $scope.cAddress, cPostcode: $scope.cPostcode, desc: $scope.desc, price: $scope.price, bName: $scope.bName };
     var modalInstance = $modal.open({
-      templateUrl: 'views/confirm.html',
+      templateUrl: 'confirm/_confirm.html',
       size: 'sm',
       controller: 'ModalCtrl'
     });
