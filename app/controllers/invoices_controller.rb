@@ -3,7 +3,7 @@ class InvoicesController < ApplicationController
   def create
     invoice = Invoice.create(invoice_params)
     if invoice.save
-      InvoiceMailer.invoice_email(invoice).deliver_now
+      InvoiceMailer.invoice_email(invoice).deliver_later
       head 200
     else
       head 500
