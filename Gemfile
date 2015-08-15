@@ -1,11 +1,17 @@
 source 'https://rubygems.org'
 
-# gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
+# used for PDF generation
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
+# used for storing secrets
 gem 'figaro'
 
 gem 'responders', '~> 2.0'
 
+# used for angular ui.router
 gem 'angular-rails-templates'
+# used for attaching csrf tokens to angular http requests
 gem 'angular_rails_csrf'
 
 gem 'sprockets', '2.12.3'
