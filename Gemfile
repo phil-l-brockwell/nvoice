@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'figaro'
 
 gem 'responders', '~> 2.0'

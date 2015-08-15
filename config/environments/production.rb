@@ -80,27 +80,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: 'n-voice-app.herokuapp.com',
-    authentication: 'plain',
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_USERNAME'],
-    password: ENV['GMAIL_PASSWORD']
+    address:         "smtp.mailgun.org",
+    port:            587,
+    domain:          ENV['domain'],
+    user_name:       ENV['username'],
+    password:        ENV['password'],
+    authentication: :plain
   }
-
-  config.action_mailer.default_url_options = { host: 'n-voice-app.herokuapp.com' }
-
-  # config.action_mailer.delivery_method = :smtp
-
-  # config.action_mailer.smtp_settings = {
-  #   address:         'smtp.mailgun.org',
-  #   port:            587,
-  #   domain:          ENV['domain'],
-  #   user_name:       ENV['username'],
-  #   password:        ENV['password'],
-  #   authentication: :plain
-  # }
 
   # config.action_mailer.default_url_options = { host: 'n-voice-app.herokuapp.com' }
 end
