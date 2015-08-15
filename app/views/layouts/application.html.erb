@@ -49,6 +49,10 @@
           </div>
 
           <div ng-show='cName && cEmail && cAddress && cPostcode && desc && price' class="form-group slide-down">
+            <input type='email' ng-click='showPreview()' ng-model='bEmail' class="form-control" placeholder="Your Email Address" required>
+          </div>
+
+          <div ng-show='cName && cEmail && cAddress && cPostcode && desc && bEmail && price' class="form-group slide-down">
             <input ng-click='showPreview()' ng-model='bName' class="form-control" placeholder="Your Name/Business Name" required>
           </div>
 

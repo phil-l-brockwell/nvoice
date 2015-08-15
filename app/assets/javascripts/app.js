@@ -39,10 +39,11 @@ angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates']
     $scope.desc = '';
     $scope.price = '';
     $scope.bName = '';
+    $scope.bEmail = '';
   };
 
   $scope.sendInvoice = function() {
-    var invoice = { cName: $scope.cName, cEmail: $scope.cEmail, cAddress: $scope.cAddress, cPostcode: $scope.cPostcode, desc: $scope.desc, price: $scope.price, bName: $scope.bName };
+    var invoice = { cName: $scope.cName, cEmail: $scope.cEmail, cAddress: $scope.cAddress, cPostcode: $scope.cPostcode, desc: $scope.desc, price: $scope.price, bName: $scope.bName, bEmail: $scope.bEmail };
     var modalInstance = $modal.open({
       templateUrl: 'modal/_confirm.html',
       size: 'sm',
