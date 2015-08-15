@@ -18,7 +18,7 @@ angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates']
   $urlRouterProvider.otherwise('welcome');
 }])
 
-.controller('MainCtrl', ['$scope', '$location', '$state', '$modal', function($scope, $location, $state, $modal) {
+.controller('MainCtrl', ['$http', '$scope', '$location', '$state', '$modal', function($http, $scope, $location, $state, $modal) {
 
   $scope.date = Date.now();
   $scope.id = Math.floor((Math.random() * 1000) + 1);
@@ -44,7 +44,7 @@ angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates']
   $scope.sendInvoice = function() {
     var invoice = { cName: $scope.cName, cEmail: $scope.cEmail, cAddress: $scope.cAddress, cPostcode: $scope.cPostcode, desc: $scope.desc, price: $scope.price, bName: $scope.bName };
     var modalInstance = $modal.open({
-      templateUrl: 'confirm/_confirm.html',
+      templateUrl: 'modal/_confirm.html',
       size: 'sm',
       controller: 'ModalCtrl'
     });
@@ -52,17 +52,9 @@ angular.module('nVoice', ['ngAnimate', 'ui.router', 'ui.bootstrap', 'templates']
     modalInstance.result.then(function() {
       console.log(invoice);
       $scope.reset();
+      $http.post('/invoices', invoice).success(function(data) {
+        console.log(data)
+      });
     });
   };
 }])
-
-.controller('ModalCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('NO');
-  };
-
-  $scope.ok = function() {
-    $modalInstance.close();
-  };
-}]);
