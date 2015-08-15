@@ -83,10 +83,10 @@ Rails.application.configure do
     address:         "smtp.mailgun.org",
     port:            587,
     domain:          ENV['domain'],
-    user_name:       ENV['username'],
+    user_name:       ENV['user_name'],
     password:        ENV['password'],
     authentication: :plain
   }
 
-  # config.action_mailer.default_url_options = { host: 'n-voice-app.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'n-voice-app.herokuapp.com' }
 end
