@@ -1,1 +1,105 @@
-this is a test for this invoice <%= @invoice.cName %>
+<html>
+
+  <head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  </head>
+
+  <body>
+
+  <div class='box col-sm-12'>
+
+    <table class='table' style='font-size: 0.7em;'>
+      <tr>
+        <td colspan='2'>
+          <%= @invoice.cName %>
+          <br>
+          <%= @invoice.cAddress %>
+          <br>
+          <%= @invoice.cPostcode %>
+          <br>
+          <%= @invoice.cEmail %>
+        </td>
+        <td style='text-align: right;' colspan='2'>
+          <h6><%= @invoice.bName %></h6>
+          <%= @invoice.bEmail %>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan='4'></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <th style='text-align: right;'>
+          Date:
+          <br>
+          Invoice No:
+        </th>
+        <td colspan='2'>
+          <%= @invoice.created_at %>
+          <br>
+          <%= @invoice.id %>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan='4'></td>
+      </tr>
+
+      <tr style='border-top: 2px solid #ddd; border-bottom: 2px solid #ddd;'>
+        <th>Description</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td><%= @invoice.desc %></td>
+        <td><%= @invoice.price %></td>
+        <td>1</td>
+        <td><%= @invoice.price %></td>
+      </tr>
+      <tr>
+        <td colspan='4'></td>
+      </tr>
+      <tr>
+        <td colspan='4'></td>
+      </tr>
+      <tr>
+        <td colspan='4'></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <th style='border-top: 2px solid #ddd; border-left: 2px solid #ddd; text-align: right;'>Subtotal</th>
+        <td style='border-top: 2px solid #ddd; border-right: 2px solid #ddd;'><%= @invoice.price %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <th style='border-left: 2px solid #ddd; text-align: right;'>Paid</th>
+        <td style='border-right: 2px solid #ddd;'>£0</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <th style='border-bottom: 2px solid #ddd; border-left: 2px solid #ddd; text-align: right'>Total</th>
+        <td style='border-bottom: 2px solid #ddd; border-right: 2px solid #ddd;'><%= @invoice.price %></td>
+      </tr>
+      <tr>
+        <th style='border-bottom: 2px solid #ddd;' colspan='4'>TERMS</th>
+      </tr>
+
+      <tr>
+        <td colspan='4'>
+          All Invoices to be paid within 30 days.
+          <br>
+          Charge of 1.5% will be made on unpaid balances after 30 days.
+        </td>
+      </tr>    
+
+    </table>
+  </div>
+  </body>
+
+</html>
