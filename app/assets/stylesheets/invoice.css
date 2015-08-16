@@ -1,0 +1,24 @@
+*= require bootstrap/dist/css/bootstrap
+
+.small-text
+{
+  font-size: 0.7em;
+}
+
+.right-align
+{
+  text-align: right;
+}
+
+.box
+{
+  font-size: 0.85em;
+  text-align: justify;
+  padding: 20px;
+  height: 540px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+}
