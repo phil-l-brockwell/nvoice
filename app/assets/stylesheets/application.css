@@ -41,22 +41,22 @@ body
 
 [ui-view].ng-enter, [ui-view].ng-leave
 {
-  transition:1s all ease; 
   -moz-transition:1s all ease; 
   -webkit-transition:1s all ease; 
+  transition:1s all ease;
 }
 
 [ui-view].ng-enter-active
 {
-  -webkit-animation:slideInRight 1s both ease;
   -moz-animation:slideInRight 1s both ease;
+  -webkit-animation:slideInRight 1s both ease;
   animation:slideInRight 1s both ease;
 }
 
 [ui-view].ng-leave-active
 {
-  -webkit-animation:slideOutRight 1s both ease;
   -moz-animation:slideOutRight 1s both ease;
+  -webkit-animation:slideOutRight 1s both ease;
   animation:slideOutRight 1s both ease;
 }
 
