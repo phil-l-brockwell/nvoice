@@ -1,12 +1,12 @@
-== README
+# README
 An interactive, intuitive, web app for small businesses to send customer invoices.
 
-=== Screenshots
+## Screenshots
 ![ScreenShot](https://github.com/robertpulson/nvoice/blob/master/images/Screen%20Shot%202015-12-20%20at%2012.05.12.png?raw=true)
 ![ScreenShot](https://github.com/robertpulson/nvoice/blob/master/images/Screen%20Shot%202015-12-20%20at%2012.06.36.png?raw=true)
 ![ScreenShot](https://github.com/robertpulson/nvoice/blob/master/images/Screen%20Shot%202015-12-20%20at%2012.08.05.png?raw=true)
 
-=== Getting Started
+## Getting Started
 
 To use this API, first clone it with: `git clone git@github.com:robertpulson/nvoice.git`.
 
