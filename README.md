@@ -8,7 +8,7 @@ An interactive, intuitive, web app for small businesses to send customer invoice
 
 ## Getting Started
 
-To use this API, first clone it with: `git clone git@github.com:robertpulson/nvoice.git`.
+First clone it with: `git clone git@github.com:robertpulson/nvoice.git`.
 
 Navigate to the directory: `cd nvoice`.
 
